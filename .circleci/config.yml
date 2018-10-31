@@ -24,7 +24,7 @@ jobs:
         name: Clone docs
         working_directory: ~/workdir
         command: |
-          git clone --depth 1 https://github.com/assadriaz/spring-boot  -examples.git
+          git clone --depth 1 https://github.com/assadriaz/spring-boot-examples.git
     - deploy:
         name: Trigger 3rd dependent deployment
         working_directory: ~/workdir/spring-boot-examples
