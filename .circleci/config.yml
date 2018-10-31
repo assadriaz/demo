@@ -38,7 +38,7 @@ jobs:
           git_hash=$(echo $CIRCLE_SHA1 | cut -c1-7)
           repo_name_hash=$repo_name"("$git_hash")"
           if [[ "$last_msg" == "CCI:"* ]]; then
-              git_msg=$last_msg "->" $repo_name_hash
+              git_msg=$($last_msg "->" $repo_name_hash)
           else
               git_msg="CCI:"$repo_name_hash
           fi
