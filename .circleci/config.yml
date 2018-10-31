@@ -24,7 +24,7 @@ jobs:
         name: Clone docs
         working_directory: ~/workdir
         command: |
-          git clone --depth 1 https://github.com/assadriaz/spring-boot-examples.git
+          git clone --depth 1 https://github.com/assadriaz/spring-boot  -examples.git
     - deploy:
         name: Trigger 3rd dependent deployment
         working_directory: ~/workdir/spring-boot-examples
@@ -35,6 +35,7 @@ jobs:
           last_msg=$(git log -1 --pretty=%B)
           git_hash=$(echo $CIRCLE_SHA1 | cut -c1-7)
           echo "git_hash is :"$git_hash
+          echo "repo name is :"$CIRCLE_PROJECT_REPONAME
           repo_name_hash=$CIRCLE_PROJECT_REPONAME"("$git_hash")"
           if [[ "$last_msg" == "CCI:"* ]]; then
               git_msg=$($last_msg "->" $repo_name_hash)
