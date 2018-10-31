@@ -40,7 +40,7 @@ jobs:
           if [[ "$last_msg" == "CCI:"* ]]; then
               git_msg=$($last_msg "->" $repo_name_hash)
           else
-              git_msg="CCI:"$repo_name_hash
+              git_msg=$("CCI:"$repo_name_hash)
           fi
           echo $git_msg
           git commit --allow-empty -m "$git_msg"
