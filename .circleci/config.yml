@@ -42,7 +42,6 @@ jobs:
           else
               git_msg=$("CCI:"$repo_name_hash)
           fi
-          echo $git_msg
           git commit --allow-empty -m "$git_msg"
           # Push quietly to prevent showing the token in log
           git push -q https://${DEMO_GITHUB_TOKEN}@github.com/assadriaz/spring-boot-examples.git master
