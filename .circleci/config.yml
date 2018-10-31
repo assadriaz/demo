@@ -32,7 +32,7 @@ jobs:
           git config credential.helper 'cache --timeout=120'
           git config user.email "<email>"
           git config user.name "CricleCI Bot"
-          last_msg=$(git log -1 --pretty=%B)
+          last_msg="last msg"
           git_hash=$(echo $CIRCLE_SHA1 | cut -c1-7)
           repo_name_hash="funnydummy"
           if [[ "$last_msg" == "CCI:"* ]]; then
