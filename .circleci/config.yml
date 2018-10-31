@@ -12,7 +12,7 @@ jobs:
         paths:
         - ~/.m2
         key: dep-cache-{{ checksum "pom.xml" }}
-    - run: mvn package
+    - run: mvn package -DskipTests
     - store_test_results:
         path: target/surefire-reports
     - store_artifacts:
