@@ -34,7 +34,7 @@ jobs:
           git config user.name "CricleCI Bot"
           last_msg=$(git log -1 --pretty=%B)
           git_hash=$(echo $CIRCLE_SHA1 | cut -c1-7)
-          repo_name_hash=$($CIRCLE_PROJECT_REPONAME"("$git_hash")")
+          repo_name_hash="funnydummy"
           if [[ "$last_msg" == "CCI:"* ]]; then
               git_msg=$($last_msg "->" $repo_name_hash)
           else
