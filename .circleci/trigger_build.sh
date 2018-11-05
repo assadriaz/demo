@@ -22,7 +22,7 @@ set -euo pipefail
           if [[ "$tmp" == "CCI:"* ]]; then
               git_msg="$tmp -> $repo_name_hash"
           else
-              git_msg="CCI:Dependency Updated:"$repo_name_hash
+              git_msg="CCI:"$repo_name_hash
           fi
           echo "and git message is "${git_msg}
           git pull
