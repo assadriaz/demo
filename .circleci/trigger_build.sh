@@ -5,6 +5,7 @@ set -euo pipefail
           repository="${1}"
           branch="${2}"
           last-commit-msg="${3}"
+          echo "last commit was $last-commit-msg"
           working_dir="workdir"
           git clone "https://www.github.com/$repository" "$working_dir"
 
