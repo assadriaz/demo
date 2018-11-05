@@ -7,7 +7,7 @@ aliases:
     echo 'export CIRCLE_PROJECT_REPONAME="$CIRCLE_PROJECT_REPONAME"' >> $BASH_ENV
     echo 'export DEMO_GITHUB_TOKEN="$DEMO_GITHUB_TOKEN"' >> $BASH_ENV
     last-commit-msg=$(git log -1 --pretty=%B)
-    trigger_build.sh "assadriaz/SpringBootReact.git" "master" "$last-commit-msg"
+    trigger_build.sh "assadriaz/SpringBootReact.git" "master" "Testing"
 jobs:
   build:
     docker:
