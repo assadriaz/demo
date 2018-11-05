@@ -4,7 +4,7 @@ set -euo pipefail
 
           repository="${1}"
           branch="${2}"
-          tmp="${3}"
+          git_message="${3}"
           working_dir="workdir"
           git clone "https://www.github.com/$repository" "$working_dir"
 
@@ -19,8 +19,8 @@ set -euo pipefail
           git_hash=$(echo $CIRCLE_SHA1 | cut -c1-7)
           repo_name_hash=${repo_name}"("${git_hash}")"
 
-          if [[ "$tmp" == "CCI:"* ]]; then
-              git_msg="$tmp -> $repo_name_hash"
+          if [[ "$git_message" == "CCI:"* ]]; then
+              git_msg="$git_message -> $repo_name_hash"
           else
               git_msg="CCI:"$repo_name_hash
           fi
